@@ -1,0 +1,10 @@
+export const TIMEOUT_SEC = 20;
+export const API_URL_WEATHER = `https://api.open-meteo.com/v1/forecast?`;
+export const API_URL_CITY = `https://api.geoapify.com/v1/geocode/reverse?`;
+export const API_KEY_CITY = `&apiKey=a1e5acb094264e18a8d7756345a3d163`;
+export const API_URL_SEARCH_CITY = `https://api.geoapify.com/v1/geocode/search?`;
+export const API_KEY_SEARCH_CITY = `&apiKey=e45c719961b14dacb472d691ed7f8272`;
+export const API_CONFIG = `&daily=sunrise,sunset,precipitation_sum,weathercode,temperature_2m_max,temperature_2m_min,sunrise&timezone=auto&current_weather=true&models=best_match&hourly=pressure_msl,winddirection_10m,visibility,relativehumidity_2m,dewpoint_2m,apparent_temperature,diffuse_radiation,windspeed_10m,temperature_2m,weathercode`;
+export const HOURLY_DATA_END = 41;
+export const MAP_DEFAULT_ZOOM_LEVEL = 10;
+export const MAP_MAX_ZOOM_LEVEL = 16;

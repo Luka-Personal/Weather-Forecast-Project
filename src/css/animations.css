@@ -1,0 +1,28 @@
+.animate-load {
+  -webkit-animation: animation-loading 1.5s infinite;
+  animation: animation-loading 1.5s infinite;
+}
+
+@-webkit-keyframes animation-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

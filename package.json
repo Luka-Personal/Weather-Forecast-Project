@@ -1,0 +1,25 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "default": "controller.js",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Luka Tsinaridze",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.0",
+    "@parcel/transformer-webmanifest": "^2.8.0",
+    "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "core-js": "^3.26.1",
+    "leaflet": "^1.9.3",
+    "regenerator-runtime": "^0.13.11"
+  }
+}

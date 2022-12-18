@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Be informed" />
+    <meta property="og:description" content="Search and find out :)" />
+    <meta property="og:url" content="https://weathersitee.netlify.app" />
+    <link rel="apple-touch-icon" href="src/img/cloudy.png" />
+    <link rel="icon" href="src/img/cloudy.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/animations.css" />
+    <link rel="stylesheet" href="/src/css/general.css" />
+    <link rel="stylesheet" href="/src/css/queries.css" />
+    <script type="module" defer src="/src/js/controller.js"></script>
+    <script type="module" defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Weather&mdash;Forecast</title>
+  </head>
+  <body>
+    <header class="header-section">
+      <form class="search">
+        <input class="city-search" type="text" placeholder="Search" />
+      </form>
+    </header>
+    <main>
+      <section class="weather-section">
+        <div class="container">
+          <div class="weather-main__box">
+            <div class="weather-brief__box card animate-load">
+              <h2 class="brief-heading">- - -</h2>
+              <p class="brief-deg">- -</p>
+              <p class="brief-state">- - -</p>
+              <p class="brief__high-low"><span>H:-</span> <span>L:-</span></p>
+            </div>
+            <div class="weather-detail__box grid grid__4rws-5cls">
+              <div class="grid-item weather-hourly__container">
+                <p class="main-paragraph line-bottom animate-load">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                <div class="weather-hourly__cards card animate-load">
+                  <div class="weather-card__hourly">
+                    <p class="main-paragraph">- -</p>
+                    <ion-icon class="weather-hourly__icons" name="cloud"></ion-icon>
+                    <p class="main-paragraph">- -</p>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item weather-daily__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="calendar-outline"></ion-icon>7-DAY FORECAST</p>
+                <div class="weather-daily__cards card animate-load">
+                  <div class="weather-card__daily">
+                    <p class="main-paragraph"><span class="weekday">- - -</span><ion-icon name="cloud"></ion-icon><span class="weekday-temp"> - - - -</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id="map" class="grid-item weather-map__container"></div>
+              <div class="grid-item weather-uv__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="sunny-outline"></ion-icon>UV INDEX</p>
+                <div class="weather-uv__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph bolder">- - -</p>
+                  <div><p></p></div>
+                  <p class="secondary-paragraph">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-sunstate__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="arrow-up-circle"></ion-icon>SUN STATE</p>
+                <div class="weather-sunstate__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="secondary-paragraph">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-winddirect__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="alert-circle-outline"></ion-icon>WIND</p>
+                <div class="weather-winddirect__card">
+                  <div class="weather-wind__compass card animate-load">
+                    <div class="wind-direction__indicator"></div>
+                    <ion-icon name="caret-up-outline"></ion-icon>
+                    <ion-icon name="caret-down-outline"></ion-icon>
+                    <ion-icon name="caret-back-outline"></ion-icon>
+                    <ion-icon name="caret-forward-outline"></ion-icon>
+                    <p class="wind-direction north">n</p>
+                    <p class="wind-direction east">e</p>
+                    <p class="wind-direction south">s</p>
+                    <p class="wind-direction west">w</p>
+                    <span class="wind-current_speed">-<span class="wind-kmh">km/h</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item weather-precipitation__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="water"></ion-icon>PRECIPITATION</p>
+                <div class="weather-precipitation__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph bolder">- - -</p>
+                  <p class="main-paragraph bolder">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-realfeel__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="thermometer-outline"></ion-icon>FEELS LIKE</p>
+                <div class="weather-realfeel__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph bolder">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-humidity__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="barcode-outline"></ion-icon>HUMIDITY</p>
+                <div class="weather-humidity__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-visibility__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="eye"></ion-icon>VISIBILITY</p>
+                <div class="weather-visibility__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+              <div class="grid-item weather-pressure__container">
+                <p class="main-paragraph line-bottom light"><ion-icon name="eye"></ion-icon>PRESSURE</p>
+                <div class="weather-pressure__card card animate-load">
+                  <h3 class="tertiary-heading">- -</h3>
+                  <p class="main-paragraph">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

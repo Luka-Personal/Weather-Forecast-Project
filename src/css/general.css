@@ -1,0 +1,223 @@
+/* GRID */
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+.grid__4rws-5cls {
+  -ms-grid-columns: 16rem 1rem 16rem 1rem 16rem 1rem 16rem 1rem 16rem 1rem 16rem;
+  grid-template-columns: repeat(6, 16rem);
+  -ms-grid-rows: 15rem 1rem 15rem 1rem 15rem 1rem 15rem;
+  grid-template-rows: repeat(4, 15rem);
+  gap: 1rem;
+}
+.grid__4rws-5cls > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.grid__4rws-5cls > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.grid__4rws-5cls > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+.grid__4rws-5cls > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+.grid__4rws-5cls > *:nth-child(5) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
+}
+.grid__4rws-5cls > *:nth-child(6) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 11;
+}
+.grid__4rws-5cls > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.grid__4rws-5cls > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.grid__4rws-5cls > *:nth-child(9) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+.grid__4rws-5cls > *:nth-child(10) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+.grid__4rws-5cls > *:nth-child(11) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 9;
+}
+.grid__4rws-5cls > *:nth-child(12) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 11;
+}
+.grid__4rws-5cls > *:nth-child(13) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+.grid__4rws-5cls > *:nth-child(14) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+.grid__4rws-5cls > *:nth-child(15) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+}
+.grid__4rws-5cls > *:nth-child(16) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+}
+.grid__4rws-5cls > *:nth-child(17) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 9;
+}
+.grid__4rws-5cls > *:nth-child(18) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 11;
+}
+.grid__4rws-5cls > *:nth-child(19) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+}
+.grid__4rws-5cls > *:nth-child(20) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+}
+.grid__4rws-5cls > *:nth-child(21) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 5;
+}
+.grid__4rws-5cls > *:nth-child(22) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 7;
+}
+.grid__4rws-5cls > *:nth-child(23) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 9;
+}
+.grid__4rws-5cls > *:nth-child(24) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 11;
+}
+/* PARAGRAPH/HEADINGS */
+.main-paragraph {
+  color: #fff;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.secondary-paragraph {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.tertiary-heading {
+  font-size: 3.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* HELPERS */
+.main-paragraph.bolder {
+  font-weight: 700;
+}
+.line-bottom {
+  border-bottom: 1px solid #999;
+  padding-bottom: 1rem;
+}
+.light {
+  border-bottom: none;
+  padding-bottom: 0;
+  font-weight: 600;
+  color: #aaa;
+}
+.tempsupercold {
+  color: #74c0fc;
+}
+.tempcold {
+  color: #a5d8ff;
+}
+.tempmiddle {
+  color: #d2d1e4;
+}
+.temphot {
+  color: #ffc9c9;
+}
+.tempsuperhot {
+  color: #ffa8a8;
+}
+/* CONATAINERS */
+.weather-hourly__cards {
+  padding-top: 1.2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 0.9rem;
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+.weather-uv__card,
+.weather-precipitation__card,
+.weather-realfeel__card,
+.weather-humidity__card,
+.weather-visibility__card,
+.weather-sunstate__card,
+.weather-winddirect__card,
+.weather-pressure__card {
+  height: 100%;
+  padding-bottom: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.weather-uv__card,
+.weather-realfeel__card,
+.weather-humidity__card,
+.weather-visibility__card,
+.weather-sunstate__card,
+.weather-pressure__card {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+.weather-winddirect__card {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+/* scrollbar */
+.weather-hourly__cards::-webkit-scrollbar {
+  width: 20px;
+  height: 9px;
+}
+.weather-hourly__cards::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+.weather-hourly__cards::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
