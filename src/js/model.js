@@ -42,6 +42,10 @@ export const loadWeather = async function (pos) {
     state.location.latitude = state.searchLoc.latitude ? state.searchLoc.latitude : data.latitude;
     // ################################################################################################################
     // 1. Making brief weather object
+    console.log(data.timezone);
+    const s = new Date();
+    console.log(new Date(s).getHours());
+
     state.briefWeather = data.current_weather;
     state.briefWeather.tempMax = data.daily.temperature_2m_max[0];
     state.briefWeather.tempMin = data.daily.temperature_2m_min[0];
@@ -57,11 +61,12 @@ export const loadWeather = async function (pos) {
     // 3. Making hourly weather object
     // here we basically compare the times to get `now` as a first card in hourly weather container
     const nowIndexTime = data.hourly.time.findIndex((date) => {
-      const userHour = new Date().getHours();
-      const userDate = new Date().getDate();
+      const userFullDate = new Date().toLocaleString(`en-US`, { timeZone: `${data.timezone}` });
+      const userHourTimezoned = new Date(userFullDate).getHours();
+      const userDate = new Date(userFullDate).getDate();
       const apiHour = new Date(date).getHours();
       const apiDate = new Date(date).getDate();
-      return userHour === apiHour && userDate === apiDate;
+      return userHourTimezoned === apiHour && userDate === apiDate;
     });
     state.hourlyWeather.title = weatherCodes[`${data.daily.weathercode[0]}`];
     state.hourlyWeather.tempCurr = data.hourly.temperature_2m.slice(nowIndexTime, HOURLY_DATA_END);
@@ -71,7 +76,10 @@ export const loadWeather = async function (pos) {
     state.hourlyWeather.time[0] = `Now`;
     // ################################################################################################################
     // 4. Making uvIndex object
-    let endIndexTime = data.hourly.time.findLastIndex((date) => new Date().getDate() === new Date(date).getDate());
+    let endIndexTime = data.hourly.time.findLastIndex((date) => {
+      const dateTimezoned = new Date().toLocaleString(`en-US`, { timeZone: `${data.timezone}` });
+      new Date(dateTimezoned).getDate() === new Date(date).getDate();
+    });
     if (nowIndexTime === endIndexTime) endIndexTime++;
     state.uvLevels.uvHourly = data.hourly.diffuse_radiation.slice(nowIndexTime, endIndexTime);
     state.uvLevels.uvIndexAvg = data.hourly.diffuse_radiation.slice(nowIndexTime, endIndexTime).reduce((acc, curr) => acc + curr) / data.hourly.diffuse_radiation.slice(nowIndexTime, endIndexTime).length / 25;
@@ -114,6 +122,7 @@ export const searchWeather = async function (sTerm) {
     // ################################################################################################################
     // 1. Get data
     const search = await GET_JSON(`${API_URL_SEARCH_CITY}text=${sTerm}${API_KEY_SEARCH_CITY}`);
+    console.log(search);
     if (search.features.length < 1) throw Error(`NOT FOUND!`);
     // ################################################################################################################
     // 2. Make search object
