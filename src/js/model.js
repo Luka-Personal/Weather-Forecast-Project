@@ -99,14 +99,15 @@ export const loadWeather = async function (pos) {
     // 8. Making visbility object
     state.visibility.actualVisibility = data.hourly.visibility[nowIndexTime];
     // 9. Making sunstate object
-    const sunriseHour = new Date(data.daily.sunrise[0]).getHours();
-    const sunriseMinutes = new Date(data.daily.sunrise[0]).getMinutes();
-    const sunsetHour = new Date(data.daily.sunset[0]).getHours();
-    const sunsetMinutes = new Date(data.daily.sunset[0]).getMinutes();
+    const sunriseHour = new Date(data.daily.sunrise[0]).getHours() || ``;
+    const sunriseMinutes = new Date(data.daily.sunrise[0]).getMinutes() || ``;
+    const sunsetHour = new Date(data.daily.sunset[0]).getHours() || ``;
+    const sunsetMinutes = new Date(data.daily.sunset[0]).getMinutes() || ``;
     state.sunState.sunRise = data.daily.sunrise;
     state.sunState.sunSet = data.daily.sunset;
-    state.sunState.formattedSunrise = `${sunriseHour}:${sunriseMinutes}`;
-    state.sunState.formattedSunset = `${sunsetHour}:${sunsetMinutes}`;
+    state.sunState.formattedSunrise = `${sunriseHour.toString().padStart(2, 0)}:${sunriseMinutes.toString().padStart(2, 0)}`;
+    state.sunState.formattedSunset = `${sunsetHour.toString().padStart(2, 0)}:${sunsetMinutes.toString().padStart(2, 0)}`;
+    console.log(data.daily);
     // 10. Making wind direction object
     state.windDirection.windDirectDeg = data.hourly.winddirection_10m[nowIndexTime];
     state.windDirection.windSpeed = data.hourly.windspeed_10m[nowIndexTime];
