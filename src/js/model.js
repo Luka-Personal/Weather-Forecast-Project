@@ -36,16 +36,15 @@ export const loadWeather = async function (pos) {
       if (urlSplit.length >= 9) await searchWeather(searchTerm);
     }
     const dataCity = await GET_JSON(`${API_URL_CITY}lat=${state.searchLoc.latitude ? state.searchLoc.latitude : data.latitude}&lon=${state.searchLoc.longitude ? state.searchLoc.longitude : data.longitude}${API_KEY_CITY}`);
+    // hack that on back btn click city names get refreshedß
+    delete state.searchLoc.latitude;
+    delete state.searchLoc.longitude;
     // ################################################################################################################
     // 0.5 Making lat/lon object
     state.location.longitude = state.searchLoc.longitude ? state.searchLoc.longitude : data.longitude;
     state.location.latitude = state.searchLoc.latitude ? state.searchLoc.latitude : data.latitude;
     // ################################################################################################################
     // 1. Making brief weather object
-    console.log(data.timezone);
-    const s = new Date();
-    console.log(new Date(s).getHours());
-
     state.briefWeather = data.current_weather;
     state.briefWeather.tempMax = data.daily.temperature_2m_max[0];
     state.briefWeather.tempMin = data.daily.temperature_2m_min[0];
@@ -107,7 +106,6 @@ export const loadWeather = async function (pos) {
     state.sunState.sunSet = data.daily.sunset;
     state.sunState.formattedSunrise = `${sunriseHour.toString().padStart(2, 0)}:${sunriseMinutes.toString().padStart(2, 0)}`;
     state.sunState.formattedSunset = `${sunsetHour.toString().padStart(2, 0)}:${sunsetMinutes.toString().padStart(2, 0)}`;
-    console.log(data.daily);
     // 10. Making wind direction object
     state.windDirection.windDirectDeg = data.hourly.winddirection_10m[nowIndexTime];
     state.windDirection.windSpeed = data.hourly.windspeed_10m[nowIndexTime];
@@ -123,7 +121,6 @@ export const searchWeather = async function (sTerm) {
     // ################################################################################################################
     // 1. Get data
     const search = await GET_JSON(`${API_URL_SEARCH_CITY}text=${sTerm}${API_KEY_SEARCH_CITY}`);
-    console.log(search);
     if (search.features.length < 1) throw Error(`NOT FOUND!`);
     // ################################################################################################################
     // 2. Make search object
