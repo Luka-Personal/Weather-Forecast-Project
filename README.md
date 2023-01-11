@@ -11,8 +11,8 @@ Getting city names using coordinates -> [Reverse Geocoding API](https://apidocs.
 Map -> [Leaflet](https://leafletjs.com)<br> 
 
 # Created by -
-Luka Tsinaridze, Languages used - Vanilla Javascript, HTML, CSS
-Date Finished 12/22/2022 - Слава Україні!
+Luka Tsinaridze, Languages used - Vanilla Javascript, HTML, CSS<br>
+Date Finished 12/22/2022 - Слава Україні!<br>
 
 
 LINK: https://weathersitee.netlify.app
