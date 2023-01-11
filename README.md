@@ -1,6 +1,6 @@
 # Weather-Forecast-Project
 
-My sexond huge project:)) Fully working weather forecast site(with search and geolocation options)!!
+My second huge project:)) Fully working weather forecast site(with search and geolocation options)!!
 
 Date Finished 12/22/2022 - Слава Україні!
 
