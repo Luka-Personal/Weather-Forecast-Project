@@ -3,9 +3,9 @@
 My second huge project:)) Fully working weather forecast site(with search and geolocation options)!!
 
 # APIs used -
-Getting weather data -> [Weather API](https://open-meteo.com):
-Getting city coordinates(while searching) -> [Geocoding API](https://apidocs.geoapify.com/docs/geocoding/forward-geocoding/#about)):
-Getting city names using coordinates -> [Reverse Geocoding API](https://apidocs.geoapify.com/docs/geocoding/reverse-geocoding/#about);
+Getting weather data -> [Weather API](https://open-meteo.com)<br>
+Getting city coordinates(while searching) -> [Geocoding API](https://apidocs.geoapify.com/docs/geocoding/forward-geocoding/#about))<br>
+Getting city names using coordinates -> [Reverse Geocoding API](https://apidocs.geoapify.com/docs/geocoding/reverse-geocoding/#about)<br>
 
 # Libraries used -
 
