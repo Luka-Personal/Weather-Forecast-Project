@@ -10,6 +10,9 @@ Getting city names using coordinates -> [Reverse Geocoding API](https://apidocs.
 # Libraries used -
 Map -> [Leaflet](https://leafletjs.com)<br> 
 
+# Bundler -
+Bundler -> [Parcel](https://parceljs.org)<br> 
+
 # Created by -
 Luka Tsinaridze, Languages used - Vanilla Javascript, HTML, CSS<br>
 Date Finished 12/22/2022 - Слава Україні!<br>
