@@ -17,8 +17,8 @@ You can also search for the weather in any location by using the search bar on t
 
 ## APIs used
 - [Open meteo API](https://open-meteo.com): for getting the current weather data
-- [Geocoding API](https://apidocs.geoapify.com/docs/geocoding/forward-geocoding/#about)<br>: for getting the search queries coords
-- [Reverse Geocoding API](https://apidocs.geoapify.com/docs/geocoding/reverse-geocoding/#about)<br>: for getting city name using coords
+- [Geocoding API](https://apidocs.geoapify.com/docs/geocoding/forward-geocoding/#about): for getting the search queries coords
+- [Reverse Geocoding API](https://apidocs.geoapify.com/docs/geocoding/reverse-geocoding/#about): for getting city name using coords
 
 ## Library Used
 - [Leaflet](https://leafletjs.com)<br> : to handle the Map
