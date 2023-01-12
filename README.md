@@ -21,7 +21,7 @@ You can also search for the weather in any location by using the search bar on t
 - [Reverse Geocoding API](https://apidocs.geoapify.com/docs/geocoding/reverse-geocoding/#about): for getting city name using coords
 
 ## Library Used
-- [Leaflet](https://leafletjs.com)<br> : to handle the Map
+- [Leaflet](https://leafletjs.com): to handle the Map
 
 ## Bundler Used
 - Parcel: for bundling and building the application
