@@ -12,7 +12,7 @@ You can also search for the weather in any location by using the search bar on t
 
 - Search for weather in any location using a search bar
 - Use your device's geolocation to display the weather in your current location
-- See the current temperature, humidity, and wind speed and many others
+- See the current temperature, humidity, wind speed and many others
 - See the forecast for the next 5 days
 
 ## APIs used
