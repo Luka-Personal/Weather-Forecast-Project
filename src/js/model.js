@@ -37,10 +37,11 @@ export const loadWeather = async function (pos) {
     }
     const dataCity = await GET_JSON(`${API_URL_CITY}lat=${state.searchLoc.latitude ? state.searchLoc.latitude : data.latitude}&lon=${state.searchLoc.longitude ? state.searchLoc.longitude : data.longitude}${API_KEY_CITY}`);
     // hack that on back btn click city names get refreshedß
-    delete state.searchLoc.latitude;
-    delete state.searchLoc.longitude;
+    // state.searchLoc.latitude = false;
+    // state.searchLoc.longitude = false; not needed(saved for later dev)
     // ################################################################################################################
     // 0.5 Making lat/lon object
+    console.log(state.searchLoc.longitude);
     state.location.longitude = state.searchLoc.longitude ? state.searchLoc.longitude : data.longitude;
     state.location.latitude = state.searchLoc.latitude ? state.searchLoc.latitude : data.latitude;
     // ################################################################################################################
